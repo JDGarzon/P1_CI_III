@@ -14,7 +14,7 @@ class registrationController {
         try {
 
             const eventExists: EventDocument | null = await eventService.findByTitle(req.body.title);
-            const userExists: UserDocument | null = await userService.findByUserName(req.body.userName);
+            const userExists: UserDocument | null = await userService.findByEmail(req.body.email);
 
             if(!userExists){
                 return res.status(400).json({message: "User doesn't exists"});
@@ -73,7 +73,7 @@ class registrationController {
 
     public async findByUserName(req: Request, res: Response){
         try {
-            const registration: RegistrationDocument[] | null = await RegistrationService.findByUserName(req.body.userName);
+            const registration: RegistrationDocument[] | null = await RegistrationService.findByEmail(req.body.email);
             
             if(!registration){
                 return res.status(404).json({message: "Registration not found"});

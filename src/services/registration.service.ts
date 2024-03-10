@@ -20,9 +20,9 @@ class RegistrationService {
         }
     }
 
-    public async findByUserName(userName: any): Promise<RegistrationDocument[] | null> {
+    public async findByEmail(email: any): Promise<RegistrationDocument[] | null> {
         try {
-            const registration = await RegistrationModel.find({userName: userName}); 
+            const registration = await RegistrationModel.find({email: email}); 
             return registration;
         } catch(error) {
             throw error;
