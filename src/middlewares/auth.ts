@@ -3,7 +3,7 @@ import jwt, { TokenExpiredError } from "jsonwebtoken";
 import userService from "../services/user.service";
 
 const auth  =  async (req: Request, res: Response, next: NextFunction) => {
-    try { 
+    try {
         let token =  req.headers.authorization;
 
         if (!token){

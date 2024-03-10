@@ -18,6 +18,8 @@ const routes = (app: Express) => {
     app.get('/users/profile', auth, userController.findById);
     app.get('/users/:id', userController.findById);
     app.get('/event/:id',auth, eventController.findById);
+    app.get('/event/filter/location',auth, eventController.getEventsByLocation);
+    app.get('/event/filter/date',auth, eventController.getEventsByDateRange);
     app.post('/login', userController.login);
 };
 
