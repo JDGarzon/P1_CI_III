@@ -79,6 +79,28 @@ class eventController {
         }
     }
 
+    public async getEventsByDateRange(req: Request, res: Response) {
+        try {
+            const { startDate, endDate } = req.params;
+            const events = await eventService.filterByDateRange(startDate, endDate);
+            res.json(events);
+        } catch (error) {
+            console.error('Error at filtering events by date range:', error);
+            res.status(500).json({ message: 'Error at filtering events by date range' });
+        }
+    }
+
+    public async getEventsByLocation(req: Request, res: Response) {
+        try {
+            const { location } = req.params;
+            const events = await eventService.filterByLocation(location);
+            res.json(events);
+        } catch (error) {
+            console.error('Error at filtering events by location:', error);
+            res.status(500).json({ message: 'Error at filtering events by location' });
+        }
+    }
+
 }
 
 export default new eventController();
