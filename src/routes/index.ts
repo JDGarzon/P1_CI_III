@@ -1,6 +1,7 @@
 import { Express } from "express";
 import userController from "../controllers/user.controller";
 import eventController from "../controllers/event.controller";
+import registrationController from "../controllers/registration.controller";
 import auth,{validateOrganizador} from "../middlewares/auth";
 import validateSchema from "../middlewares/validateSchema";
 import  userSchema  from "../schemas/user.schema";
@@ -21,6 +22,13 @@ const routes = (app: Express) => {
     app.get('/event/filter/location',auth, eventController.getEventsByLocation);
     app.get('/event/filter/date',auth, eventController.getEventsByDateRange);
     app.post('/login', userController.login);
+    app.get('/registration',auth, registrationController.getRegistrations);
+    app.post('/registration', auth, registrationController.create);
+    app.put('/registration/:id', auth, registrationController.update );
+    app.delete('/registration/:id', auth, registrationController.delete );
+    app.get('/registration/:id',auth, registrationController.findById);
+    app.get('/registration/title',auth, registrationController.findByTitle);
+    app.get('/registration/user',auth, registrationController.findByUserName);
 };
 
 export default routes;

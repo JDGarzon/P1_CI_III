@@ -21,6 +21,15 @@ class UserService {
         }
     }
 
+    public async findByUserName(userName: any): Promise<UserDocument | null> {
+        try {
+            const user = await UserModel.findOne({name: userName}); 
+            return user;  
+        } catch(error) {
+            throw error;
+        }
+    }
+
     public async findAll(): Promise<UserDocument[]> {
         try {
             const users = await UserModel.find();
