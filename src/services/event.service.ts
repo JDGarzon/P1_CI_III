@@ -81,7 +81,7 @@ class EventService {
     
             return events;
         } catch (error) {
-            throw new Error('Error filtering events by date range: ' + error.message);
+            throw new Error('Error filtering events by date range: ');
         }
     }
 
@@ -97,7 +97,7 @@ class EventService {
     
             return events;
         } catch (error) {
-            throw new Error('Error filtering events by location: ' + error.message);
+            throw new Error('Error filtering events by location: ');
         }
     }
 
