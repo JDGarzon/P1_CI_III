@@ -81,7 +81,7 @@ class eventController {
 
     public async getEventsByDateRange(req: Request, res: Response) {
         try {
-            const { startDate, endDate } = req.params;
+            const { startDate, endDate } = req.body;
             const events = await eventService.filterByDateRange(startDate, endDate);
             res.json(events);
         } catch (error) {
@@ -92,7 +92,7 @@ class eventController {
 
     public async getEventsByLocation(req: Request, res: Response) {
         try {
-            const { location } = req.params;
+            const { location } = req.body;
             const events = await eventService.filterByLocation(location);
             res.json(events);
         } catch (error) {
