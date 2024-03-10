@@ -1,2 +1,3 @@
-yarn install
-yarn run dev
+## Ejecución
+1. yarn install
+2. yarn run dev
