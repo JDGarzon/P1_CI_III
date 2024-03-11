@@ -1,3 +1,7 @@
+## Participantes
+- Juan david Garzon Diaz
+- Geovanny Quintero
+
 ## Funcionalidad y modulos del proyecto
 
 El proyecto consiste en desarrollar una API RESTful utilizando Node.js y TypeScript para la gestión de eventos y usuarios. La API permitirá a los usuarios crear, listar, modificar y eliminar eventos, así como inscribirse en ellos. Se implementará un sistema de registro y autenticación de usuarios con diferentes roles, y se protegerán las rutas CRUD con autenticación JWT para garantizar la seguridad y el control de acceso adecuados. Los módulos y funcionalidades específicas son:
