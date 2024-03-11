@@ -67,6 +67,9 @@ const validateOrganizador  =  async (req: Request, res: Response, next: NextFunc
         if (!user){
             return res.status(401).json({message: "Not authorized"});
         }
+        if(user.role != "organizador"){
+            return res.status(401).json({message: "Not authorized"});
+        }
 
         // Llamar a la función next para continuar con el siguiente middleware o controlador
         next();
