@@ -28,6 +28,7 @@ const routes = (app: Express) => {
     app.delete('/registration/:id', auth, registrationController.delete );
     app.get('/registration/title',auth, registrationController.findByTitle);
     app.get('/registration/user',auth, registrationController.findByUserName);
+    app.get('/registration/:id', auth, registrationController.findById );
 };
 
 export default routes;
