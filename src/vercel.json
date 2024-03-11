@@ -1,14 +1,15 @@
-{
+{   
     "builds": [
         {
-            "src": "src/main.ts",
-            "use": "@now/node-server"
+            "src": "./index.ts",
+            "use": "@vercel/node"
         }
     ],
     "routes": [
         {
-            "src": "/.*",
-            "dest": "src/main.js"
+            "src": "/(.*)",
+            "dest": "/"
         }
     ]
+    
 }
