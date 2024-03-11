@@ -13,7 +13,7 @@ class RegistrationService {
 
     public async findByTitle(title: any): Promise<RegistrationDocument[] | null> {
         try {
-            const registration = await RegistrationModel.find({eventTitle: title}); 
+            const registration = await RegistrationModel.find({title: title}); 
             return registration;
         } catch(error) {
             throw error;

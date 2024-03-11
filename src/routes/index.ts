@@ -26,7 +26,6 @@ const routes = (app: Express) => {
     app.post('/registration', auth, registrationController.create);
     app.put('/registration/:id', auth, registrationController.update );
     app.delete('/registration/:id', auth, registrationController.delete );
-    app.get('/registration/:id',auth, registrationController.findById);
     app.get('/registration/title',auth, registrationController.findByTitle);
     app.get('/registration/user',auth, registrationController.findByUserName);
 };
