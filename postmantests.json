@@ -60,18 +60,22 @@
         "method":"POST"
     },
     {
-        "url":"/event",
+        "url":"/event/string21",
         "body":{
-
+            "title": "string21",
+            "description": "string",
+            "date": "2012-04-24",
+            "time": "02:20",
+            "location": "string"
         },
         "method":"PUT"
     },
     {
-        "url":"/",
+        "url":"/event/string21",
         "body":{
 
         },
-        "method":""
+        "method":"GET"
     },
     {
         "url":"/",

@@ -64,7 +64,7 @@ class eventController {
     public async update(req: Request, res: Response){
         try {
             // Verificar si el evento existe
-            const eventExists: EventDocument | null = await eventService.findById(req.params.id);
+            const eventExists: EventDocument | null = await eventService.findByTitle(req.body.title);
 
             // Si el evento no existe, devolver un mensaje de error
             if(!eventExists){
@@ -72,7 +72,7 @@ class eventController {
             }
 
             // Actualizar el evento utilizando los datos del cuerpo de la solicitud
-            const updateEvent: EventDocument | null = await eventService.update(req.params.id, req.body);
+            const updateEvent: EventDocument | null = await eventService.update(req.body.title, req.body);
 
             // Devolver el evento actualizado
             return res.status(200).json(updateEvent);
@@ -87,7 +87,7 @@ class eventController {
     public async delete(req: Request, res: Response){
         try {
             // Verificar si el evento existe
-            const eventExists: EventDocument | null = await eventService.findById(req.params.id);
+            const eventExists: EventDocument | null = await eventService.findByTitle(req.body.title);
 
             // Si el evento no existe, devolver un mensaje de error
             if(!eventExists){
@@ -95,7 +95,7 @@ class eventController {
             }
 
             // Eliminar el evento
-            const event: EventDocument | null = await eventService.delete(req.params.id);
+            const event: EventDocument | null = await eventService.delete(req.body.title);
 
             // Devolver un mensaje indicando que el evento ha sido eliminado
             return res.status(200).json(`Event has been deleted ${event}`);
