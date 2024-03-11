@@ -1,0 +1,146 @@
+[
+    {
+        "url":"/login",
+        "body":{
+            "email": "email@email.com",
+            "password": "password"
+        },
+        "method":"POST"
+    },
+    {
+        "url":"/users",
+        "body":{
+            "name": "name",
+            "email": "nuevo@email.com",
+            "password": "password",
+            "role":"organizador"
+        },
+        "method":"POST"
+    },
+    {
+        "url":"/users/65ee4c9503d67b988a85102e",
+        "body":{
+            "name": "namechange",
+            "email": "email@email.com",
+            "password": "password",
+            "role":"organizador"
+        },
+        "method":"PUT"
+    },
+    {
+        "url":"/users/65ee4c9503d67b988a85102e",
+        "body":{
+
+        },
+        "method":"DELETE"
+    },
+    {
+        "url":"/users/65ee4c9503d67b988a85102e",
+        "body":{
+
+        },
+        "method":"GET"
+    },
+    {
+        "url":"/event",
+        "body":{
+
+        },
+        "method":"GET"
+    },
+    {
+        "url":"/event",
+        "body":{
+            "title": "string31",
+            "description": "string",
+            "date": "2012-04-24",
+            "time": "02:00",
+            "location": "string"
+        },
+        "method":"POST"
+    },
+    {
+        "url":"/event",
+        "body":{
+
+        },
+        "method":"PUT"
+    },
+    {
+        "url":"/",
+        "body":{
+
+        },
+        "method":""
+    },
+    {
+        "url":"/",
+        "body":{
+
+        },
+        "method":""
+    },
+    {
+        "url":"/",
+        "body":{
+
+        },
+        "method":""
+    },
+    {
+        "url":"/",
+        "body":{
+
+        },
+        "method":""
+    },
+    {
+        "url":"/",
+        "body":{
+
+        },
+        "method":""
+    },
+    {
+        "url":"/",
+        "body":{
+
+        },
+        "method":""
+    },
+    {
+        "url":"/",
+        "body":{
+
+        },
+        "method":""
+    },
+    {
+        "url":"/",
+        "body":{
+
+        },
+        "method":""
+    },
+    {
+        "url":"/",
+        "body":{
+
+        },
+        "method":""
+    },
+    {
+        "url":"/",
+        "body":{
+
+        },
+        "method":""
+    },
+    {
+        "url":"/",
+        "body":{
+
+        },
+        "method":""
+    }
+]

@@ -22,6 +22,9 @@ const routes = (app: Express) => {
 
     // Endpoint para obtener todos los eventos
     app.get('/event', auth, eventController.getEvents);
+    
+    // Endpoint para obtener un evento por su ID
+    app.get('/event/:id', auth, eventController.findById);
 
     // Endpoint para crear un nuevo evento
     app.post('/event', validateOrganizador, validateSchema(eventSchema), eventController.create);
