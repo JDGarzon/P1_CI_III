@@ -78,73 +78,61 @@
         "method":"GET"
     },
     {
-        "url":"/",
+        "url":"/event/filter/location",
         "body":{
-
+            "location":"string"
         },
-        "method":""
+        "method":"GET"
     },
     {
-        "url":"/",
+        "url":"/event/filter/date",
         "body":{
-
+            "startDate":"2012-04-20",
+            "endDate":"2012-04-24"
         },
-        "method":""
+        "method":"GET"
     },
     {
-        "url":"/",
+        "url":"/registration",
         "body":{
 
         },
-        "method":""
+        "method":"GET"
     },
     {
-        "url":"/",
-        "body":{
-
+        "url":"/registration",
+        "body":{    
+            "title":"string2",
+            "email":"juan@email.com"
         },
-        "method":""
+        "method":"POST"
     },
     {
-        "url":"/",
+        "url":"/registration/65ee8da065665e336e536466",
         "body":{
 
         },
-        "method":""
+        "method":"GET"
     },
     {
-        "url":"/",
+        "url":"/registration/65ee4d981d5acb3873ab1023",
         "body":{
 
         },
-        "method":""
+        "method":"DELETE"
     },
     {
-        "url":"/",
+        "url":"/registration/title",
         "body":{
-
+            "title":"string"
         },
-        "method":""
+        "method":"GET"
     },
     {
-        "url":"/",
+        "url":"/registration/user",
         "body":{
-
+            "email":"juan@email.com"
         },
-        "method":""
-    },
-    {
-        "url":"/",
-        "body":{
-
-        },
-        "method":""
-    },
-    {
-        "url":"/",
-        "body":{
-
-        },
-        "method":""
+        "method":"GET"
     }
 ]

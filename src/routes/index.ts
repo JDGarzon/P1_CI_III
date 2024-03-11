@@ -22,27 +22,24 @@ const routes = (app: Express) => {
 
     // Endpoint para obtener todos los eventos
     app.get('/event', auth, eventController.getEvents);
-    
+
     // Endpoint para obtener un evento por su ID
-    app.get('/event/:id', auth, eventController.findById);
+    app.get('/event/:eventid', auth, eventController.findById);
 
     // Endpoint para crear un nuevo evento
     app.post('/event', validateOrganizador, validateSchema(eventSchema), eventController.create);
 
     // Endpoint para actualizar la información de un evento existente
-    app.put('/event/:id', validateOrganizador, eventController.update );
+    app.put('/event/:eventid', validateOrganizador, eventController.update );
 
     // Endpoint para eliminar un evento existente
-    app.delete('/event/:id', validateOrganizador, eventController.delete );
+    app.delete('/event/:eventid', validateOrganizador, eventController.delete );
 
     // Endpoint para obtener el perfil del usuario autenticado
     app.get('/users/profile', auth, userController.findById);
 
     // Endpoint para obtener la información de un usuario específico por ID
     app.get('/users/:id', userController.findById);
-
-    // Endpoint para obtener la información de un evento específico por ID
-    app.get('/event/:id', auth, eventController.findById);
 
     // Endpoint para obtener una lista de eventos filtrados por ubicación
     app.get('/event/filter/location', auth, eventController.getEventsByLocation);
@@ -60,19 +57,21 @@ const routes = (app: Express) => {
     app.post('/registration', auth, registrationController.create);
 
     // Endpoint para actualizar la información de una inscripción existente
-    app.put('/registration/:id', auth, registrationController.update );
+    app.put('/registration/:rid', auth, registrationController.update );
 
     // Endpoint para eliminar una inscripción existente
-    app.delete('/registration/:id', auth, registrationController.delete );
-
-    // Endpoint para obtener la información de una inscripción específica por ID
-    app.get('/registration/:id', auth, registrationController.findById);
+    app.delete('/registration/:rid', auth, registrationController.delete );
 
     // Endpoint para obtener una lista de inscripciones filtradas por título
     app.get('/registration/title', auth, registrationController.findByTitle);
 
     // Endpoint para obtener una lista de inscripciones filtradas por nombre de usuario
     app.get('/registration/user', auth, registrationController.findByUserName);
+
+    // Endpoint para obtener la información de una inscripción específica por ID
+    app.get('/registration/:rid', auth, registrationController.findById);
+
+    
 };
 
 export default routes;

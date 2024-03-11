@@ -45,11 +45,11 @@ class eventController {
     public async findById(req: Request, res: Response){
         try {
             // Buscar un evento por su ID
-            const event: EventDocument | null = await eventService.findByTitle(req.body.title);
-            
+
+            const event: EventDocument | null = await eventService.findByTitle(req.params.eventid);
             // Si no se encuentra el evento, devolver un mensaje de error
             if(!event){
-                return res.status(404).json({message: "Event not found"});
+                return res.status(404).json({message: req.params});
             }
 
             // Devolver el evento encontrado
@@ -64,7 +64,7 @@ class eventController {
     public async update(req: Request, res: Response){
         try {
             // Verificar si el evento existe
-            const eventExists: EventDocument | null = await eventService.findByTitle(req.body.title);
+            const eventExists: EventDocument | null = await eventService.findByTitle(req.params.eventid);
 
             // Si el evento no existe, devolver un mensaje de error
             if(!eventExists){
@@ -87,7 +87,7 @@ class eventController {
     public async delete(req: Request, res: Response){
         try {
             // Verificar si el evento existe
-            const eventExists: EventDocument | null = await eventService.findByTitle(req.body.title);
+            const eventExists: EventDocument | null = await eventService.findByTitle(req.params.eventid);
 
             // Si el evento no existe, devolver un mensaje de error
             if(!eventExists){

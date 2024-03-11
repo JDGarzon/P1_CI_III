@@ -58,11 +58,11 @@ class registrationController {
     public async findById(req: Request, res: Response){
         try {
             // Buscar una inscripción por su ID
-            const registration: RegistrationDocument | null = await RegistrationService.findById(req.params.id);
+            const registration: RegistrationDocument | null = await RegistrationService.findById(req.params.rid);
             
             // Si no se encuentra la inscripción, devolver un mensaje de error
             if(!registration){
-                return res.status(404).json({message: "Registration not found"});
+                return res.status(404).json({message: req.params});
             }
 
             // Devolver la inscripción encontrada
@@ -115,7 +115,7 @@ class registrationController {
     public async update(req: Request, res: Response){
         try {
             // Verificar si la inscripción existe
-            const registrationExists: RegistrationDocument | null = await RegistrationService.findById(req.params.id);
+            const registrationExists: RegistrationDocument | null = await RegistrationService.findById(req.params.rid);
 
             // Si la inscripción no existe, devolver un mensaje de error
             if(!registrationExists){
@@ -123,7 +123,7 @@ class registrationController {
             }
 
             // Actualizar la inscripción utilizando los datos del cuerpo de la solicitud
-            const updateRegistration: RegistrationDocument | null = await RegistrationService.update(req.params.id, req.body);
+            const updateRegistration: RegistrationDocument | null = await RegistrationService.update(req.params.rid, req.body);
 
             // Devolver la inscripción actualizada
             return res.status(200).json(updateRegistration);
@@ -138,7 +138,7 @@ class registrationController {
     public async delete(req: Request, res: Response){
         try {
             // Verificar si la inscripción existe
-            const registrationExists: RegistrationDocument | null = await RegistrationService.findById(req.params.id);
+            const registrationExists: RegistrationDocument | null = await RegistrationService.findById(req.params.rid);
 
             // Si la inscripción no existe, devolver un mensaje de error
             if(!registrationExists){
@@ -146,7 +146,7 @@ class registrationController {
             }
 
             // Eliminar la inscripción
-            const  registration : RegistrationDocument | null = await RegistrationService.delete(req.params.id);
+            const  registration : RegistrationDocument | null = await RegistrationService.delete(req.params.rid);
 
             // Devolver un mensaje indicando que la inscripción ha sido eliminada
             return res.status(200).json(`Registration has been deleted ${registration}`);
