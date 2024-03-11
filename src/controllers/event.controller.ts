@@ -45,7 +45,7 @@ class eventController {
     public async findById(req: Request, res: Response){
         try {
             // Buscar un evento por su ID
-            const event: EventDocument | null = await eventService.findById(req.params.id);
+            const event: EventDocument | null = await eventService.findByTitle(req.body.title);
             
             // Si no se encuentra el evento, devolver un mensaje de error
             if(!event){
